@@ -1,7 +1,7 @@
 import baseApi from "./baseApi";
 import type { Product } from "./types";
 
-const pageSize = 6;
+const pageSize = 8;
 
 const getProducts = (pageIndex: number): Promise<Product[]> =>
 	baseApi

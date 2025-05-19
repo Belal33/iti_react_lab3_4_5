@@ -22,8 +22,11 @@ export default function ProductDetails() {
 			<ProductCardDetail product={product} />
 		</Container>
 	) : (
-		<Container>
-			<h1>Not Found</h1>
+		<Container
+			style={{ height: "50vh" }}
+			className="text-danger px-4 text-center d-flex align-items-center justify-content-center"
+		>
+			<h1>Product Not Found</h1>
 		</Container>
 	);
 }

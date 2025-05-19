@@ -4,6 +4,7 @@ import { Suspense, lazy } from "react";
 import BaseNavBar from "./components/baseNavBar";
 import LangProvider from "./context/pageLangContextProvider";
 import LoadingPage from "./components/loadingPage";
+import NotFoundPage from "./pages/notFoundPage";
 
 const Home = lazy(() => import("./pages/home"));
 const Product = lazy(() => import("./pages/product"));
@@ -21,6 +22,7 @@ function App() {
 						<Route path="/product/:id" element={<Product />} />
 						<Route path="/cart" element={<CartPage />} />
 						<Route path="/register" element={<Registration />} />
+						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 				</Suspense>
 			</BrowserRouter>
