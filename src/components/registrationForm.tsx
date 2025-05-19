@@ -19,10 +19,13 @@ const passwordRegex =
 export default function RegistrationForm() {
 	const [formErrors, setFormErrors] = useState<FormErrors>();
 	const navigate = useNavigate();
+
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const errors = validateRegistrationForm(e);
+
 		setFormErrors(errors);
+
 		if (Object.values(errors).every((error) => error.length === 0)) {
 			alert(
 				`Form submitted successfully! 
@@ -107,13 +110,11 @@ function validateRegistrationForm(e: React.FormEvent<HTMLFormElement>) {
 		passwordConfirm: [],
 	};
 	const name = e.currentTarget.fromName.value;
-	console.log(name);
 	// Name Validation [required];
 	if (!name) {
 		errors.name.push("Name is required");
 	}
 	const username = e.currentTarget.formUsername.value;
-	console.log(username);
 	// Username Validation [required , no spaces];
 	if (!username) {
 		errors.username.push("Username is required");
@@ -122,7 +123,6 @@ function validateRegistrationForm(e: React.FormEvent<HTMLFormElement>) {
 		errors.username.push("Username cannot contain spaces");
 	}
 	const email = e.currentTarget.formEmail.value;
-	console.log(email);
 	// Email Validation [required , valid email format];
 	if (!email) {
 		errors.email.push("Email is required");
@@ -131,7 +131,6 @@ function validateRegistrationForm(e: React.FormEvent<HTMLFormElement>) {
 		errors.email.push("Invalid email format");
 	}
 	const password = e.currentTarget.formPassword.value;
-	console.log(password);
 	// Password Validation [required , at least 8 characters];
 	if (!password) {
 		errors.password.push("Password is required");
@@ -142,7 +141,6 @@ function validateRegistrationForm(e: React.FormEvent<HTMLFormElement>) {
 		);
 	}
 	const passwordConfirm = e.currentTarget.formPasswordConfirm.value;
-	console.log(passwordConfirm);
 	// Password Confirmation Validation [required , match password];
 	if (!passwordConfirm) {
 		errors.passwordConfirm.push("Password confirmation is required");

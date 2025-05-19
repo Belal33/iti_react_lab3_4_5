@@ -8,7 +8,12 @@ export default function CartPage() {
 		<Container className="px-4">
 			<h1 className="text-center">Cart</h1>
 			{cartItems.value === 0 && (
-				<div className="text-center mt-5 fw-bold fs-3">Cart is empty</div>
+				<div
+					style={{ height: "50vh" }}
+					className="text-center mt-5 fw-bold fs-3"
+				>
+					Cart is empty
+				</div>
 			)}
 			{cartItems.items.map((item) => (
 				<CartCard cartItem={item} key={item.product.id} />

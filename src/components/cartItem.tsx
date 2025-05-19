@@ -4,7 +4,6 @@ import { useAppDispatch } from "../store/store";
 
 export default function CartCard({ cartItem }: { cartItem: CartItem }) {
 	const appDispatch = useAppDispatch();
-	// const cart = useAppSelector((state) => state.cartStore);
 	return (
 		<Card style={{ maxWidth: "40rem" }} className=" mx-auto  mb-3">
 			<Row className="g-0">
